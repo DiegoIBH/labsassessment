@@ -1,0 +1,7 @@
+[14-Jun-2024 09:37:43 UTC] Cron reschedule event error for hook: action_scheduler_run_queue, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[14-Jun-2024 10:20:20 UTC] PHP Warning:  Undefined array key "form" in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\ultimate-member\includes\common\class-cpt.php on line 162
+[14-Jun-2024 10:20:20 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\ultimate-member\includes\common\class-cpt.php on line 162
+[14-Jun-2024 10:20:20 UTC] PHP Warning:  Undefined array key "form" in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\ultimate-member\includes\common\class-cpt.php on line 162
+[14-Jun-2024 10:20:20 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\ultimate-member\includes\common\class-cpt.php on line 162
+[14-Jun-2024 10:20:20 UTC] PHP Warning:  Undefined array key "form" in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\ultimate-member\includes\common\class-cpt.php on line 162
+[14-Jun-2024 10:20:20 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\ultimate-member\includes\common\class-cpt.php on line 162
