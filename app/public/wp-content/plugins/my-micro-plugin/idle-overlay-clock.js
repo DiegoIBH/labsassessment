@@ -7,17 +7,19 @@ jQuery(document).ready(function($) {
             showOverlay();
         }
     }
-
+// Timer is reset after the user moves mouse or presses a key
     function resetTimer() {
         idleTime = 0;
-        if (idleTime < 8) {
-            hideOverlay();
-        }
+        hideOverlay();
+        // if (idleTime < 8) {
+        //     hideOverlay();
+        // }
     }
-
+    //Triggered by timer Increment function, the overlay will fade in, trigger the updateClock function and the conditional.
     function showOverlay() {
         $('#ioc-overlay').fadeIn();
         updateClock();
+        //If the user is logged in, we can show the user name and email
         if (ioc_user_data.is_logged_in) {
             $('#user-name').text(`${ioc_user_data.user_name}`);
             $('#user-email').text(`${ioc_user_data.user_email}`);
@@ -27,7 +29,7 @@ jQuery(document).ready(function($) {
     function hideOverlay() {
         $('#ioc-overlay').fadeOut();
     }
-
+    //Current clock time and date
     function updateClock() {
         let now = new Date();
         $('#ioc-clock').text(now.toLocaleTimeString());
@@ -43,15 +45,13 @@ jQuery(document).ready(function($) {
 
     //append the html code in body
     $('body').append(`
-        <div id="ioc-overlay" style="display:none;">
-            <div id="ioc-clock"></div>
-            <div id="ioc-date"></div>
-            <div id="ioc-user-info">
-                <ul>
-                    <li id="user-name"></li>
-                    <li id="user-email"></li>
-                </ul>
-            </div>
-        </div>
+        <section id="ioc-overlay" style="display:none;">
+            <ul id="ioc-overlay-list">
+                <li id="ioc-clock"></li>
+                <li id="ioc-date"></li>
+                <li id="user-name"></li>
+                <li id="user-email"></li>
+            </ul>
+        </section>
     `);
 });

@@ -12,7 +12,7 @@
     flex-direction: column;
     z-index: 1000;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 #ioc-user-info {
@@ -20,6 +20,17 @@
     font-size: 0.8em;
 }
 
-ul{
+#ioc-overlay-list{
     list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#ioc-overlay-list li{
+    margin: 1rem 0;
+}
+
+@media screen and (min-width: 480px) {
+    #ioc-overlay {
+    font-size: 2em;
+    }
 }

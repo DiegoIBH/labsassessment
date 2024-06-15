@@ -5,3 +5,15 @@
 [14-Jun-2024 10:20:20 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\ultimate-member\includes\common\class-cpt.php on line 162
 [14-Jun-2024 10:20:20 UTC] PHP Warning:  Undefined array key "form" in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\ultimate-member\includes\common\class-cpt.php on line 162
 [14-Jun-2024 10:20:20 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\ultimate-member\includes\common\class-cpt.php on line 162
+[15-Jun-2024 21:11:23 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:1416F086:SSL routines:tls_process_server_certificate:certificate verify failed in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\db-access-adminer\index.php on line 160
+[15-Jun-2024 21:11:23 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\db-access-adminer\index.php on line 160
+[15-Jun-2024 21:11:23 UTC] PHP Warning:  file_get_contents(https://labsassessment.local/wp-json/lev0/db-access-adminer/conduit/): Failed to open stream: operation failed in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\db-access-adminer\index.php on line 160
+[15-Jun-2024 21:11:44 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:1416F086:SSL routines:tls_process_server_certificate:certificate verify failed in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\db-access-adminer\index.php on line 160
+[15-Jun-2024 21:11:44 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\db-access-adminer\index.php on line 160
+[15-Jun-2024 21:11:44 UTC] PHP Warning:  file_get_contents(https://labsassessment.local/wp-json/lev0/db-access-adminer/conduit/): Failed to open stream: operation failed in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\db-access-adminer\index.php on line 160
+[15-Jun-2024 21:12:02 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:1416F086:SSL routines:tls_process_server_certificate:certificate verify failed in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\db-access-adminer\index.php on line 160
+[15-Jun-2024 21:12:02 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\db-access-adminer\index.php on line 160
+[15-Jun-2024 21:12:02 UTC] PHP Warning:  file_get_contents(https://labsassessment.local/wp-json/lev0/db-access-adminer/conduit/): Failed to open stream: operation failed in C:\Users\Diego Barros\Local Sites\labsassessment\app\public\wp-content\plugins\db-access-adminer\index.php on line 160
