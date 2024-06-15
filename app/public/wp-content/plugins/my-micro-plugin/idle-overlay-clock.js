@@ -18,7 +18,10 @@ jQuery(document).ready(function($) {
     function showOverlay() {
         $('#ioc-overlay').fadeIn();
         updateClock();
-        
+        if (ioc_user_data.is_logged_in) {
+            $('#user-name').text(`${ioc_user_data.user_name}`);
+            $('#user-email').text(`${ioc_user_data.user_email}`);
+        }
     }
 
     function hideOverlay() {
@@ -30,7 +33,7 @@ jQuery(document).ready(function($) {
         $('#ioc-clock').text(now.toLocaleTimeString());
         $('#ioc-date').text(now.toDateString());
     }
-
+    //Update methods every second for clock and timer for showing the overlay every second
     setInterval(timerIncrement, 1000);
     setInterval(updateClock, 1000);
 
