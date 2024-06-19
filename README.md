@@ -12,8 +12,7 @@ This is a solution for the backend code assessment in a ongoing hiring process.
   - [Built with](#built-with)
 - [Plugin details](#plugin-details)
   - [Installation](#installation)
-  - [Usage](#usage)
-
+  - [Purpose](#purpose)
 - [Author](#author)
 
 ## Overview
@@ -91,3 +90,8 @@ With these steps, the plugin should be already and running within your project.
 The plugin is intended to be used in a WordPress site, in order to inform the user about an idle status while in the web and revert back to normal once he starts to use the website again. 
 
 It provides extra information if the user is logged in and provides the site admin with database record of the user's idle concurrency, that he can then check on SQL Buddy plugin directly from his admin dashboard. 
+
+## Author
+- Website - [Diego Barros](https://diegoibh-curr.wuaze.com)
+- Frontend Mentor - [@DiegoIBH](https://www.frontendmentor.io/profile/DiegoIBH)
+- GitHub - [@DiegoIBH](https://github.com/DiegoIBH)
