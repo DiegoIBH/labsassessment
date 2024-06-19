@@ -1,36 +1,59 @@
 #ioc-overlay {
+    font-family: 'Barlow Condensed', sans-serif;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
-    color: #fff;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     z-index: 1000;
     text-align: center;
-    font-size: 1.5em;
-}
-
-#ioc-user-info {
-    margin-top: 20px;
-    font-size: 0.8em;
+    font-size: 1.2rem;
+    
 }
 
 #ioc-overlay-list{
+    background-color: whitesmoke;
+    border-radius: 5rem;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 1rem;
+    width: 80%;
+    box-shadow: whitesmoke 0 0 0.5rem 0.25rem;
 }
 #ioc-overlay-list li{
     margin: 1rem 0;
 }
+#user-name{
+    text-transform: uppercase;
+}
+hr{
+    width: 80%;
+    height: 0.2rem;
+    background-color: black;
+}
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 558px) {
     #ioc-overlay {
-    font-size: 2em;
+    font-size: 2rem;
+    }
+    #ioc-overlay-list{
+        width: initial;
+        padding: 3rem
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #ioc-overlay {
+        font-size: 3rem;
+        }
+    #ioc-overlay-list{
+        width: initial;
+        padding: 5rem;
     }
 }
