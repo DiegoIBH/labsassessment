@@ -53,6 +53,7 @@ Optional tasks:
 4. Added conditional to show user information, created css file with styling for the overlay and enqueued styling file in PHP file
 5. Checked for corrections, used html semantic structure for the overlay, added more comments to the code and looked in to responsiveness.
 6. Included last optional task an reviewed the code and comments.
+7. Curate the assessment, checked for possible improvements.
 
 ### Built with
 
@@ -62,7 +63,7 @@ Languages:
 - JavaScript
 - PHP
 Other tools:
-- CMS: Wordpress
+- CMS: WordPress
 - Library: jQuery
 Approach: 
 - Mobile-first
@@ -72,18 +73,21 @@ Approach:
 ### Installation
 
 1. Download the zip file from the repository and unzip it.
-2. Find the plugin directory `labsassessment\app\public\wp-content\plugins\my-micro-plugin` copy it and paste it within the  `/wp-content/plugins/` directory in own your project.
-3. Go to the admin menu in Wordpress site and check if it appears with in installed plugins.
+2. Find the plugin directory `labsassessment\app\public\wp-content\plugins\my-micro-plugin` copy it and paste it within the  `\wp-content\plugins\` directory in own your project.
+3. Go to the admin menu in WordPress site and check if it appears with in installed plugins.
 4. Activate the plugin.
 
 Extra requirements you would like to have in order to have full use of the plugin:
-1. Install the "Ultimate Member" plugin, in order to preform registration, login and logout.
-2. Add class= "logged-in-only" or "logged-out-only" to the nav items you want to show when login and logged out.
-3. 
 
-With these steps, the plugin should be already running with in your project.
+1. Install the "Ultimate Member" plugin, in order to preform registration, login and logout.
+2. Once "Ultimate Member" is installed, go to  *settings -> access*  and change the "Global Site Access" to site accessible to logged in users and the "Custom Redirect URL" to the `/login/` URL, to force user login. 
+3. Add class= "logged-in-only" or "logged-out-only" to the nav items you want to show when login and logged out.
+4. Install "SQL Buddy" in order to visualize the db tables form within the menu *Tools -> SQL Buddy*
+
+With these steps, the plugin should be already and running within your project.
 
 ### Purpose
 
-The plugin is intended to be used in a Wordpress site, it will show the current date and time in a overlay when the user is idle for 10 seconds.
+The plugin is intended to be used in a WordPress site, in order to inform the user about an idle status while in the web and revert back to normal once he starts to use the website again. 
 
+It provides extra information if the user is logged in and provides the site admin with database record of the user's idle concurrency, that he can then check on SQL Buddy plugin directly from his admin dashboard. 

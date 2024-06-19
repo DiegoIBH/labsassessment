@@ -10,7 +10,7 @@ add_action('wp_enqueue_scripts', 'ioc_enqueue_scripts'); //Hook to the wp acctio
 
 function ioc_enqueue_scripts() {
     wp_enqueue_script('jquery');//We call the jquery library in to the plugin
-    wp_enqueue_script('ioc-custom-script', plugin_dir_url(__FILE__) . 'idle-overlay-clock.js', array('jquery'), null, true);//We give name to our script, constructs URL dir that contains the js doc, array query loads the library first so its applied to our script, null is the where the version of the script should be and true is boolean value to apply it to the footer.
+    wp_enqueue_script('ioc-custom-script', plugin_dir_url(__FILE__) . 'idle-overlay-clock.js', array('jquery'), null, true);//We give name to our script, constructs URL dir that contains the js doc, array query loads the library first so it's applied to our script, null is the where the version of the script should be and true is boolean value to apply it to the footer.
     wp_enqueue_style('ioc-custom-style', plugin_dir_url(__FILE__) . 'idle-overlay-clock.css');
     
 }
@@ -27,18 +27,19 @@ function ioc_localize_script() {
         'user_email' => $current_user->user_email   // request user email with the user_email property
     ));
     wp_localize_script('ioc-custom-script', 'custom_ajax', array(
-        'ajax_url' => admin_url('admin-ajax.php'),
+        'ajax_url' => admin_url('admin-ajax.php'),// request the ajax url
     ));
 };
 
-register_activation_hook(__FILE__, 'create_user_activity_table');
+register_activation_hook(__FILE__, 'create_user_activity_table');//Hook that upon activation of the plugin, creates the user activity table.
 
-function create_user_activity_table() {
-    global $wpdb;
+
+function create_user_activity_table() { // Creation of the previously mentioned table.
+    global $wpdb;//variable with global scope that contains the wp database.
     $table_name = $wpdb->prefix . 'user_activity';
     
-    $charset_collate = $wpdb->get_charset_collate();
-    
+    $charset_collate = $wpdb->get_charset_collate();// Method that returns the charset(encoding) and collation(string comparison) of the database.
+
     $sql = "CREATE TABLE $table_name (
         id mediumint(9) NOT NULL AUTO_INCREMENT,
         user_name varchar(255) NOT NULL,
@@ -46,17 +47,17 @@ function create_user_activity_table() {
         PRIMARY KEY  (id)
     ) $charset_collate;";
     
-    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-    dbDelta($sql);
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');// Includes the upgrade.php file that contains the dbDelta function.
+    dbDelta($sql);//Function for update and creation of the table.
 };
 
-add_action('wp_ajax_store_user_activity', 'store_user_activity');
+add_action('wp_ajax_store_user_activity', 'store_user_activity');//Hook that upon ajax call, stores the user activity in the database.
 
 function store_user_activity() {
-    if (!is_user_logged_in()) {
-        wp_send_json_error('User not logged in');
-        wp_die();
-    }
+    if (!is_user_logged_in()) { //Check if user is logged in.
+        wp_send_json_error('User not logged in'); // If not, send an error message.
+        wp_die();// End the script after the error message, avoiding the rest of the code to be executed.
+    };
     // $user = wp_get_current_user();
     $user_id = get_current_user_id();
     $timestamp = current_time('mysql');
@@ -64,7 +65,7 @@ function store_user_activity() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'user_activity';
     
-    $inserted = $wpdb->insert(
+    $inserted = $wpdb->insert(// Method that inserts data into the database table.
         $table_name,
         array(
             'user_id' => $user_id,

@@ -9,8 +9,8 @@ jQuery(document).ready(function($) {
         }else{
             $('.logged-in-only').css('display', 'none');
             $('.logged-out-only').css('display', 'block');
-        }
-    }
+        };
+    };
 
     let overlayTimeout;
     //In order to test that our wp_enqueue_script is called properly, I trigger a function that after 10seconds will show the overlay.
@@ -18,35 +18,32 @@ jQuery(document).ready(function($) {
         showOverlay();
         storeUserActivity(); //Update the user activity in the database.
     }
-    // Calls the custom_ajax object
+    // Makes an async POST request by executing 'store_user_activity' action stated in the php file
     function storeUserActivity() {
-        $.ajax({
-            url: custom_ajax.ajax_url,
-            type: 'POST',
-            data: {
-                action: 'store_user_activity'
-            },
-            success: function(response) {
-                if(response.success) {
-                    console.log('User activity recorded');
-                } else {
-                    console.log('Failed to record user activity: ' + response.data);
+        if (ioc_user_data.is_logged_in) {
+            $.ajax({
+                url: custom_ajax.ajax_url,
+                type: 'POST',
+                data: {
+                    action: 'store_user_activity'
+                },
+                success: function(response) {
+                    if(response.success) {
+                        console.log('User activity recorded');
+                    } else {
+                        console.log('Failed to record user activity: ' + response.data);
+                    }
+                },
+                error: function(error) {
+                    console.log('AJAX error: ' + error);
                 }
-            },
-            error: function(error) {
-                console.log('AJAX error: ' + error);
-            }
-        });
-    }
-
-
-// Timer is reset after the user moves mouse or presses a key
-    function resetTimer() {
-        hideOverlay();
-    }
-    //Triggered by timer Increment function, the overlay will fade in, trigger the updateClock function and the conditional.
+            });
+        }else{
+            console.log("User is not logged in");
+        };
+    };     
     
-
+//Triggered by timer Increment function, the overlay will fade in, trigger the updateClock function and the conditional.
     function showOverlay() {
         $('#ioc-overlay').fadeIn();
         updateClock();
@@ -54,30 +51,31 @@ jQuery(document).ready(function($) {
         if (ioc_user_data.is_logged_in) {
             $('#user-name').text(`${ioc_user_data.user_name}`);
             $('#user-email').text(`${ioc_user_data.user_email}`);
-        }
-    }
-
-    async function hideOverlay() {
+        };
+    };
+// Hides layover and clears overlayTimeout variable in case there is previous setTimeout
+    function hideOverlay() {
         $('#ioc-overlay').fadeOut();
         if (overlayTimeout) {
             clearTimeout(overlayTimeout);
         }
         overlayTimeout = setTimeout(timerIncrement, 10000);
-    }
+    };
+    //Reset trigger
+    $(this).mousemove(hideOverlay);
+    $(this).keypress(hideOverlay);
+
+
     //Current clock time and date
     function updateClock() {
         let now = new Date();
         $('#ioc-clock').text(now.toLocaleTimeString());
         $('#ioc-date').text(now.toDateString());
-    }
+    };
     //Update methods every second for clock and timer for showing the overlay every second
     //resetTimer()
     setInterval(updateClock, 1000);
     overlayTimeout = setTimeout(timerIncrement, 10000);
-
-    //Reset trigger
-    $(this).mousemove(resetTimer);
-    $(this).keypress(resetTimer);
 
     //append the html code in body
     $('body').append(`
