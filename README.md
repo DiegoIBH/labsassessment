@@ -1,6 +1,6 @@
 # Backend Code Assessment
 
-This is a solution for the backend code assessment in a ongoing hiring process.
+This is a solution for the backend code assessment in an ongoing hiring process.
 
 ## Table of contents
 - [Overview](#overview)
@@ -49,7 +49,7 @@ Optional tasks:
 1. In order to get started, I uploaded a plugin for user login/logout and registration. 
 2. Created a directory and 2 files (PHP and JS) to test plugin being triggered correctly.
 3. Update PHP and JS files, adding functionality (clock, reset triggers and update) in JS and localize function + hook in PHP.
-4. Added conditional to show user information, created css file with styling for the overlay and enqueued styling file in PHP file
+4. Added conditional to show user information, created css file with styling for the overlay and enqueued styling file in PHP file.
 5. Checked for corrections, used html semantic structure for the overlay, added more comments to the code and looked in to responsiveness.
 6. Included last optional task an reviewed the code and comments.
 7. Curate the assessment, checked for possible improvements.
@@ -57,15 +57,15 @@ Optional tasks:
 ### Built with
 
 Languages:
-- Semantic HTML5
-- CSS styling
-- JavaScript
-- PHP
+  - Semantic HTML5
+  - CSS styling
+  - JavaScript
+  - PHP
 Other tools:
-- CMS: WordPress
-- Library: jQuery
+  - CMS: WordPress
+  - Library: jQuery
 Approach: 
-- Mobile-first
+  - Mobile-first
 
 ## Plugin details
 
@@ -93,5 +93,4 @@ It provides extra information if the user is logged in and provides the site adm
 
 ## Author
 - Website - [Diego Barros](https://diegoibh-curr.wuaze.com)
-- Frontend Mentor - [@DiegoIBH](https://www.frontendmentor.io/profile/DiegoIBH)
 - GitHub - [@DiegoIBH](https://github.com/DiegoIBH)
